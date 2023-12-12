@@ -1,0 +1,693 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="initial-scale=1,user-scalable=no,maximum-scale=1,width=device-width">
+        <meta name="mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <link rel="stylesheet" href="css/leaflet.css">
+        <link rel="stylesheet" href="css/qgis2web.css"><link rel="stylesheet" href="css/fontawesome-all.min.css">
+        <style>
+        html, body, #map {
+            width: 100%;
+            height: 100%;
+            padding: 0;
+            margin: 0;
+        }
+        </style>
+        <title></title>
+    </head>
+    <body>
+        <div id="map">
+        </div>
+        <script src="js/qgis2web_expressions.js"></script>
+        <script src="js/leaflet.js"></script>
+        <script src="js/multi-style-layer.js"></script>
+        <script src="js/leaflet-svg-shape-markers.min.js"></script>
+        <script src="js/leaflet.rotatedMarker.js"></script>
+        <script src="js/leaflet.pattern.js"></script>
+        <script src="js/leaflet-hash.js"></script>
+        <script src="js/Autolinker.min.js"></script>
+        <script src="js/rbush.min.js"></script>
+        <script src="js/labelgun.min.js"></script>
+        <script src="js/labels.js"></script>
+        <script src="data/RgiondunordCameroun_0.js"></script>
+        <script src="data/Parcs_Nord_Cameroun_1.js"></script>
+        <script src="data/ZICs_Nord_Cameroun_2.js"></script>
+        <script src="data/Fleuve_Bnou_3.js"></script>
+        <script src="data/Reseau_4.js"></script>
+        <script src="data/RseauHydrologique_5.js"></script>
+        <script src="data/Villages_6.js"></script>
+        <script>
+        var map = L.map('map', {
+            zoomControl:true, maxZoom:28, minZoom:1
+        }).fitBounds([[7.659517561148302,12.509523152525636],[9.439598018864457,14.94696811864031]]);
+        var hash = new L.Hash(map);
+        map.attributionControl.setPrefix('<a href="https://github.com/tomchadwin/qgis2web" target="_blank">qgis2web</a> &middot; <a href="https://leafletjs.com" title="A JS library for interactive maps">Leaflet</a> &middot; <a href="https://qgis.org">QGIS</a>');
+        var autolinker = new Autolinker({truncate: {length: 30, location: 'smart'}});
+        var bounds_group = new L.featureGroup([]);
+        function setBounds() {
+        }
+        function pop_RgiondunordCameroun_0(feature, layer) {
+            var popupContent = '<table>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['fid'] !== null ? autolinker.link(feature.properties['fid'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['desc_type'] !== null ? autolinker.link(feature.properties['desc_type'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['nom_reg'] !== null ? autolinker.link(feature.properties['nom_reg'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['population'] !== null ? autolinker.link(feature.properties['population'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                </table>';
+            layer.bindPopup(popupContent, {maxHeight: 400});
+        }
+
+        function style_RgiondunordCameroun_0_0() {
+            return {
+                pane: 'pane_RgiondunordCameroun_0',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 2.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(253,191,111,0.0)',
+                interactive: true,
+            }
+        }
+        map.createPane('pane_RgiondunordCameroun_0');
+        map.getPane('pane_RgiondunordCameroun_0').style.zIndex = 400;
+        map.getPane('pane_RgiondunordCameroun_0').style['mix-blend-mode'] = 'normal';
+        var layer_RgiondunordCameroun_0 = new L.geoJson(json_RgiondunordCameroun_0, {
+            attribution: '',
+            interactive: true,
+            dataVar: 'json_RgiondunordCameroun_0',
+            layerName: 'layer_RgiondunordCameroun_0',
+            pane: 'pane_RgiondunordCameroun_0',
+            onEachFeature: pop_RgiondunordCameroun_0,
+            style: style_RgiondunordCameroun_0_0,
+        });
+        bounds_group.addLayer(layer_RgiondunordCameroun_0);
+        map.addLayer(layer_RgiondunordCameroun_0);
+        function pop_Parcs_Nord_Cameroun_1(feature, layer) {
+            var popupContent = '<table>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['type_'] !== null ? autolinker.link(feature.properties['type_'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['desc_type'] !== null ? autolinker.link(feature.properties['desc_type'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['nom_ap'] !== null ? autolinker.link(feature.properties['nom_ap'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['partenar'] !== null ? autolinker.link(feature.properties['partenar'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['cat_uicn'] !== null ? autolinker.link(feature.properties['cat_uicn'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['wdpaid'] !== null ? autolinker.link(feature.properties['wdpaid'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['statu_crea'] !== null ? autolinker.link(feature.properties['statu_crea'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['statu_amgt'] !== null ? autolinker.link(feature.properties['statu_amgt'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['date_amgt'] !== null ? autolinker.link(feature.properties['date_amgt'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['date_prop'] !== null ? autolinker.link(feature.properties['date_prop'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['date_crea'] !== null ? autolinker.link(feature.properties['date_crea'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['last_edite'] !== null ? autolinker.link(feature.properties['last_edite'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['last_edi_1'] !== null ? autolinker.link(feature.properties['last_edi_1'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['created_us'] !== null ? autolinker.link(feature.properties['created_us'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['created_da'] !== null ? autolinker.link(feature.properties['created_da'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['globalid'] !== null ? autolinker.link(feature.properties['globalid'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['OBJECTID'] !== null ? autolinker.link(feature.properties['OBJECTID'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['sup_mar_ha'] !== null ? autolinker.link(feature.properties['sup_mar_ha'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['sup_adm_ha'] !== null ? autolinker.link(feature.properties['sup_adm_ha'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['sup_sig_ha'] !== null ? autolinker.link(feature.properties['sup_sig_ha'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['SHAPE_Leng'] !== null ? autolinker.link(feature.properties['SHAPE_Leng'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['SHAPE_Area'] !== null ? autolinker.link(feature.properties['SHAPE_Area'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                </table>';
+            layer.bindPopup(popupContent, {maxHeight: 400});
+        }
+
+        function style_Parcs_Nord_Cameroun_1_0() {
+            return {
+                pane: 'pane_Parcs_Nord_Cameroun_1',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(129,211,125,1.0)',
+                interactive: true,
+            }
+        }
+        function style_Parcs_Nord_Cameroun_1_1() {
+            return {
+                pane: 'pane_Parcs_Nord_Cameroun_1',
+                opacity: 1,
+                color: 'rgba(56,128,54,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fillOpacity: 0,
+                interactive: true,
+            }
+        }
+        map.createPane('pane_Parcs_Nord_Cameroun_1');
+        map.getPane('pane_Parcs_Nord_Cameroun_1').style.zIndex = 401;
+        map.getPane('pane_Parcs_Nord_Cameroun_1').style['mix-blend-mode'] = 'normal';
+        var layer_Parcs_Nord_Cameroun_1 = new L.geoJson.multiStyle(json_Parcs_Nord_Cameroun_1, {
+            attribution: '',
+            interactive: true,
+            dataVar: 'json_Parcs_Nord_Cameroun_1',
+            layerName: 'layer_Parcs_Nord_Cameroun_1',
+            pane: 'pane_Parcs_Nord_Cameroun_1',
+            onEachFeature: pop_Parcs_Nord_Cameroun_1,
+            styles: [style_Parcs_Nord_Cameroun_1_0,style_Parcs_Nord_Cameroun_1_1,]
+        });
+        bounds_group.addLayer(layer_Parcs_Nord_Cameroun_1);
+        map.addLayer(layer_Parcs_Nord_Cameroun_1);
+        function pop_ZICs_Nord_Cameroun_2(feature, layer) {
+            var popupContent = '<table>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['type_'] !== null ? autolinker.link(feature.properties['type_'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['desc_type'] !== null ? autolinker.link(feature.properties['desc_type'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['nom_zic'] !== null ? autolinker.link(feature.properties['nom_zic'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['num_zic'] !== null ? autolinker.link(feature.properties['num_zic'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['amodiatair'] !== null ? autolinker.link(feature.properties['amodiatair'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['offre_fin'] !== null ? autolinker.link(feature.properties['offre_fin'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['statu_crea'] !== null ? autolinker.link(feature.properties['statu_crea'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['date_arre'] !== null ? autolinker.link(feature.properties['date_arre'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['date_crea'] !== null ? autolinker.link(feature.properties['date_crea'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['last_edite'] !== null ? autolinker.link(feature.properties['last_edite'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['last_edi_1'] !== null ? autolinker.link(feature.properties['last_edi_1'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['created_us'] !== null ? autolinker.link(feature.properties['created_us'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['created_da'] !== null ? autolinker.link(feature.properties['created_da'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['objectid'] !== null ? autolinker.link(feature.properties['objectid'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['globalid'] !== null ? autolinker.link(feature.properties['globalid'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['sup_adm_ha'] !== null ? autolinker.link(feature.properties['sup_adm_ha'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['sup_sig_ha'] !== null ? autolinker.link(feature.properties['sup_sig_ha'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['shape_Leng'] !== null ? autolinker.link(feature.properties['shape_Leng'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['shape_Area'] !== null ? autolinker.link(feature.properties['shape_Area'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                </table>';
+            layer.bindPopup(popupContent, {maxHeight: 400});
+        }
+
+        var pattern_ZICs_Nord_Cameroun_2_0 = new L.StripePattern({
+            weight: 0.3,
+            spaceWeight: 2.0,
+            color: '#b2df8a',
+            opacity: 1.0,
+            spaceOpacity: 0,
+            angle: 225
+        });
+        pattern_ZICs_Nord_Cameroun_2_0.addTo(map);
+        function style_ZICs_Nord_Cameroun_2_0() {
+            return {
+                pane: 'pane_ZICs_Nord_Cameroun_2',
+                stroke: false,
+                fillOpacity: 1,
+                fillPattern: pattern_ZICs_Nord_Cameroun_2_0,
+                interactive: true,
+            }
+        }
+        function style_ZICs_Nord_Cameroun_2_1() {
+            return {
+                pane: 'pane_ZICs_Nord_Cameroun_2',
+                opacity: 1,
+                color: 'rgba(178,223,138,1.0)',
+                dashArray: '',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 2.0,
+                fillOpacity: 0,
+                interactive: true,
+            }
+        }
+        map.createPane('pane_ZICs_Nord_Cameroun_2');
+        map.getPane('pane_ZICs_Nord_Cameroun_2').style.zIndex = 402;
+        map.getPane('pane_ZICs_Nord_Cameroun_2').style['mix-blend-mode'] = 'normal';
+        var layer_ZICs_Nord_Cameroun_2 = new L.geoJson.multiStyle(json_ZICs_Nord_Cameroun_2, {
+            attribution: '',
+            interactive: true,
+            dataVar: 'json_ZICs_Nord_Cameroun_2',
+            layerName: 'layer_ZICs_Nord_Cameroun_2',
+            pane: 'pane_ZICs_Nord_Cameroun_2',
+            onEachFeature: pop_ZICs_Nord_Cameroun_2,
+            styles: [style_ZICs_Nord_Cameroun_2_0,style_ZICs_Nord_Cameroun_2_1,]
+        });
+        bounds_group.addLayer(layer_ZICs_Nord_Cameroun_2);
+        map.addLayer(layer_ZICs_Nord_Cameroun_2);
+        function pop_Fleuve_Bnou_3(feature, layer) {
+            var popupContent = '<table>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['id'] !== null ? autolinker.link(feature.properties['id'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                </table>';
+            layer.bindPopup(popupContent, {maxHeight: 400});
+        }
+
+        function style_Fleuve_Bnou_3_0() {
+            return {
+                pane: 'pane_Fleuve_Bnou_3',
+                stroke: false, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(126,193,227,1.0)',
+                interactive: true,
+            }
+        }
+        map.createPane('pane_Fleuve_Bnou_3');
+        map.getPane('pane_Fleuve_Bnou_3').style.zIndex = 403;
+        map.getPane('pane_Fleuve_Bnou_3').style['mix-blend-mode'] = 'normal';
+        var layer_Fleuve_Bnou_3 = new L.geoJson(json_Fleuve_Bnou_3, {
+            attribution: '',
+            interactive: true,
+            dataVar: 'json_Fleuve_Bnou_3',
+            layerName: 'layer_Fleuve_Bnou_3',
+            pane: 'pane_Fleuve_Bnou_3',
+            onEachFeature: pop_Fleuve_Bnou_3,
+            style: style_Fleuve_Bnou_3_0,
+        });
+        bounds_group.addLayer(layer_Fleuve_Bnou_3);
+        map.addLayer(layer_Fleuve_Bnou_3);
+        function pop_Reseau_4(feature, layer) {
+            var popupContent = '<table>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['type_'] !== null ? autolinker.link(feature.properties['type_'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['desc_type'] !== null ? autolinker.link(feature.properties['desc_type'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['type_revet'] !== null ? autolinker.link(feature.properties['type_revet'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['priorite'] !== null ? autolinker.link(feature.properties['priorite'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['statu_rout'] !== null ? autolinker.link(feature.properties['statu_rout'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['date_ouver'] !== null ? autolinker.link(feature.properties['date_ouver'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['date_ferme'] !== null ? autolinker.link(feature.properties['date_ferme'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['last_edite'] !== null ? autolinker.link(feature.properties['last_edite'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['last_edi_1'] !== null ? autolinker.link(feature.properties['last_edi_1'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['created_us'] !== null ? autolinker.link(feature.properties['created_us'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['created_da'] !== null ? autolinker.link(feature.properties['created_da'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['objectid'] !== null ? autolinker.link(feature.properties['objectid'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['globalid'] !== null ? autolinker.link(feature.properties['globalid'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['shape_Leng'] !== null ? autolinker.link(feature.properties['shape_Leng'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['fid'] !== null ? autolinker.link(feature.properties['fid'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['desc_type_'] !== null ? autolinker.link(feature.properties['desc_type_'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['nom_reg'] !== null ? autolinker.link(feature.properties['nom_reg'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['population'] !== null ? autolinker.link(feature.properties['population'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                </table>';
+            layer.bindPopup(popupContent, {maxHeight: 400});
+        }
+
+        function style_Reseau_4_0(feature) {
+            switch(String(feature.properties['desc_type'])) {
+                case 'Route départementale':
+                    return {
+                pane: 'pane_Reseau_4',
+                opacity: 1,
+                color: 'rgba(215,25,28,1.0)',
+                dashArray: '',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 1,
+                fillOpacity: 0,
+                interactive: true,
+            }
+                    break;
+                case 'Route nationale':
+                    return {
+                pane: 'pane_Reseau_4',
+                opacity: 1,
+                color: 'rgba(243,25,10,1.0)',
+                dashArray: '',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 2.0,
+                fillOpacity: 0,
+                interactive: true,
+            }
+                    break;
+                case 'Route pubique':
+                    return {
+                pane: 'pane_Reseau_4',
+                opacity: 1,
+                color: 'rgba(219,30,42,1.0)',
+                dashArray: '',
+                lineCap: 'round',
+                lineJoin: 'round',
+                weight: 1.0,
+                fillOpacity: 0,
+                interactive: true,
+            }
+                    break;
+                case 'Route régionale':
+                    return {
+                pane: 'pane_Reseau_4',
+                opacity: 1,
+                color: 'rgba(243,25,10,1.0)',
+                dashArray: '',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 1.0,
+                fillOpacity: 0,
+                interactive: true,
+            }
+                    break;
+                default:
+                    return {
+                pane: 'pane_Reseau_4',
+                opacity: 1,
+                color: 'rgba(43,131,186,1.0)',
+                dashArray: '',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 1.0,
+                fillOpacity: 0,
+                interactive: true,
+            }
+                    break;
+            }
+        }
+        map.createPane('pane_Reseau_4');
+        map.getPane('pane_Reseau_4').style.zIndex = 404;
+        map.getPane('pane_Reseau_4').style['mix-blend-mode'] = 'normal';
+        var layer_Reseau_4 = new L.geoJson(json_Reseau_4, {
+            attribution: '',
+            interactive: true,
+            dataVar: 'json_Reseau_4',
+            layerName: 'layer_Reseau_4',
+            pane: 'pane_Reseau_4',
+            onEachFeature: pop_Reseau_4,
+            style: style_Reseau_4_0,
+        });
+        bounds_group.addLayer(layer_Reseau_4);
+        map.addLayer(layer_Reseau_4);
+        function pop_RseauHydrologique_5(feature, layer) {
+            var popupContent = '<table>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['id'] !== null ? autolinker.link(feature.properties['id'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['Nom'] !== null ? autolinker.link(feature.properties['Nom'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                </table>';
+            layer.bindPopup(popupContent, {maxHeight: 400});
+        }
+
+        function style_RseauHydrologique_5_0(feature) {
+            switch(String(feature.properties['id'])) {
+                case '1':
+                    return {
+                pane: 'pane_RseauHydrologique_5',
+                opacity: 1,
+                color: 'rgba(126,193,227,1.0)',
+                dashArray: '',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 2.0,
+                fillOpacity: 0,
+                interactive: true,
+            }
+                    break;
+                case '2':
+                    return {
+                pane: 'pane_RseauHydrologique_5',
+                opacity: 1,
+                color: 'rgba(126,193,227,1.0)',
+                dashArray: '',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 3.0,
+                fillOpacity: 0,
+                interactive: true,
+            }
+                    break;
+                case '3':
+                    return {
+                pane: 'pane_RseauHydrologique_5',
+                opacity: 1,
+                color: 'rgba(126,193,227,1.0)',
+                dashArray: '',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 4.0,
+                fillOpacity: 0,
+                interactive: true,
+            }
+                    break;
+                case '4':
+                    return {
+                pane: 'pane_RseauHydrologique_5',
+                opacity: 1,
+                color: 'rgba(126,193,227,1.0)',
+                dashArray: '',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 13.0,
+                fillOpacity: 0,
+                interactive: true,
+            }
+                    break;
+                default:
+                    return {
+                pane: 'pane_RseauHydrologique_5',
+                opacity: 1,
+                color: 'rgba(8,48,107,1.0)',
+                dashArray: '',
+                lineCap: 'square',
+                lineJoin: 'bevel',
+                weight: 3.0,
+                fillOpacity: 0,
+                interactive: true,
+            }
+                    break;
+            }
+        }
+        map.createPane('pane_RseauHydrologique_5');
+        map.getPane('pane_RseauHydrologique_5').style.zIndex = 405;
+        map.getPane('pane_RseauHydrologique_5').style['mix-blend-mode'] = 'normal';
+        var layer_RseauHydrologique_5 = new L.geoJson(json_RseauHydrologique_5, {
+            attribution: '',
+            interactive: true,
+            dataVar: 'json_RseauHydrologique_5',
+            layerName: 'layer_RseauHydrologique_5',
+            pane: 'pane_RseauHydrologique_5',
+            onEachFeature: pop_RseauHydrologique_5,
+            style: style_RseauHydrologique_5_0,
+        });
+        bounds_group.addLayer(layer_RseauHydrologique_5);
+        map.addLayer(layer_RseauHydrologique_5);
+        function pop_Villages_6(feature, layer) {
+            var popupContent = '<table>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['id'] !== null ? autolinker.link(feature.properties['id'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                    <tr>\
+                        <td colspan="2">' + (feature.properties['Nom'] !== null ? autolinker.link(feature.properties['Nom'].toLocaleString()) : '') + '</td>\
+                    </tr>\
+                </table>';
+            layer.bindPopup(popupContent, {maxHeight: 400});
+        }
+
+        function style_Villages_6_0() {
+            return {
+                pane: 'pane_Villages_6',
+                shape: 'triangle',
+                radius: 4.0,
+                opacity: 1,
+                color: 'rgba(215,25,28,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1,
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(215,25,28,1.0)',
+                interactive: true,
+            }
+        }
+        map.createPane('pane_Villages_6');
+        map.getPane('pane_Villages_6').style.zIndex = 406;
+        map.getPane('pane_Villages_6').style['mix-blend-mode'] = 'normal';
+        var layer_Villages_6 = new L.geoJson(json_Villages_6, {
+            attribution: '',
+            interactive: true,
+            dataVar: 'json_Villages_6',
+            layerName: 'layer_Villages_6',
+            pane: 'pane_Villages_6',
+            onEachFeature: pop_Villages_6,
+            pointToLayer: function (feature, latlng) {
+                var context = {
+                    feature: feature,
+                    variables: {}
+                };
+                return L.shapeMarker(latlng, style_Villages_6_0(feature));
+            },
+        });
+        bounds_group.addLayer(layer_Villages_6);
+        map.addLayer(layer_Villages_6);
+        setBounds();
+        var i = 0;
+        layer_Parcs_Nord_Cameroun_1.eachLayer(function(layer) {
+            var context = {
+                feature: layer.feature,
+                variables: {}
+            };
+            layer.bindTooltip((layer.feature.properties['nom_ap'] !== null?String('<div style="color: #323232; font-size: 10pt; font-style: italic; font-family: \'Liberation Sans\', sans-serif;">' + layer.feature.properties['nom_ap']) + '</div>':''), {permanent: true, offset: [-0, -16], className: 'css_Parcs_Nord_Cameroun_1'});
+            labels.push(layer);
+            totalMarkers += 1;
+              layer.added = true;
+              addLabel(layer, i);
+              i++;
+        });
+        var i = 0;
+        layer_ZICs_Nord_Cameroun_2.eachLayer(function(layer) {
+            var context = {
+                feature: layer.feature,
+                variables: {}
+            };
+            layer.bindTooltip((layer.feature.properties['num_zic'] !== null?String('<div style="color: #323232; font-size: 12pt; font-weight: bold; font-family: \'Liberation Sans\', sans-serif;">' + layer.feature.properties['num_zic']) + '</div>':''), {permanent: true, offset: [-0, -16], className: 'css_ZICs_Nord_Cameroun_2'});
+            labels.push(layer);
+            totalMarkers += 1;
+              layer.added = true;
+              addLabel(layer, i);
+              i++;
+        });
+        var i = 0;
+        layer_Villages_6.eachLayer(function(layer) {
+            var context = {
+                feature: layer.feature,
+                variables: {}
+            };
+            layer.bindTooltip((layer.feature.properties['Nom'] !== null?String('<div style="color: #323232; font-size: 10pt; font-family: \'Liberation Sans\', sans-serif;">' + layer.feature.properties['Nom']) + '</div>':''), {permanent: true, offset: [-0, -16], className: 'css_Villages_6'});
+            labels.push(layer);
+            totalMarkers += 1;
+              layer.added = true;
+              addLabel(layer, i);
+              i++;
+        });
+        resetLabels([layer_Parcs_Nord_Cameroun_1,layer_ZICs_Nord_Cameroun_2,layer_Villages_6]);
+        map.on("zoomend", function(){
+            resetLabels([layer_Parcs_Nord_Cameroun_1,layer_ZICs_Nord_Cameroun_2,layer_Villages_6]);
+        });
+        map.on("layeradd", function(){
+            resetLabels([layer_Parcs_Nord_Cameroun_1,layer_ZICs_Nord_Cameroun_2,layer_Villages_6]);
+        });
+        map.on("layerremove", function(){
+            resetLabels([layer_Parcs_Nord_Cameroun_1,layer_ZICs_Nord_Cameroun_2,layer_Villages_6]);
+        });
+        </script>
+    </body>
+</html>
